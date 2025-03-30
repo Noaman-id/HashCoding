@@ -8,7 +8,7 @@ using namespace std;
 #define m 100
 
 int Fonc_Hshcode(string Cle, int nb_function){
-	int L=long(Cle);
+	int L=longf(Cle);
 	int cp=0;
 	switch (nb_function)
 	{

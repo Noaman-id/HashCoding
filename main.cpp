@@ -7,6 +7,21 @@ using namespace std;
 
 #define m 100
 
+struct Pliste
+{
+	string info;
+	Pliste* Suiv;
+};
+struct Eliste
+{
+	int NbElem;
+	Pliste* Suiv; 
+};
+struct TTHash
+{
+	Eliste Tableau[m];
+};
+
 int longfc(string Cle) {
     int count = 0;
     while (Cle[count] != NULL) {  
@@ -15,8 +30,12 @@ int longfc(string Cle) {
     return count;
 }
 
+<<<<<<< HEAD
 int Fonc_Hshcode(string Cle, int nb_function){
 
+=======
+int Fonc_Hashcode(string Cle, int nb_function){
+>>>>>>> c04093c13fa9954866e1b784ddda23a23d7b413f
 	int L=longfc(Cle);
 	int cp=0;
 	switch (nb_function)
@@ -34,8 +53,34 @@ int Fonc_Hshcode(string Cle, int nb_function){
 		return cp % m;
 		break;
 	case 3:
-	// a trouver  //
+
 		break;
+	}
+}
+
+void Ajouter_liste(Pliste* Ptr,string Cle){
+	Pliste* P;
+	Pliste* Q;
+	Pliste* R;
+	P = Ptr;
+	Q = new Pliste;
+	Q->info=Cle;
+	Q->Suiv=NULL;
+	if(P == NULL) Ptr=Q;
+	else{
+		if(Cle < P->info){
+			Q->Suiv=Ptr;
+			Ptr=Q;
+		}
+		else{
+			while (Cle > P->info && P != NULL)
+			{
+				R=P;
+				P=P->Suiv;
+			}
+			R->Suiv=Q;
+			Q->Suiv=P;
+		}
 	}
 }
 

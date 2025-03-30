@@ -34,7 +34,7 @@ int longf(string Cle) {
 }
 
 int CreeFichier(int a){
-	ofstream fichier("Cle.txt", ios::out | ios::trunc);
+	ofstream fichier("Bib.bin", ios::out | ios::trunc);
 	for(int i=0;i<a;i++){
 		fichier<<CreeCle(3,30)<<endl;
 	}

@@ -7,12 +7,16 @@ using namespace std;
 
 #define m 100
 
+int longfc(string Cle) {
+    int count = 0;
+    while (Cle[count] != NULL) {  
+        count++;
+    }
+    return count;
+}
+
 int Fonc_Hshcode(string Cle, int nb_function){
-<<<<<<< HEAD
-	int L;
-=======
 	int L=longfc(Cle);
->>>>>>> 7319a61680cff506bbc9f066dd6d028b68d68859
 	int cp=0;
 	switch (nb_function)
 	{
@@ -54,18 +58,6 @@ string CreeCle(int a,int b){
 	return Cle;
 }
 
-<<<<<<< HEAD
-=======
-
-int longfc(string Cle) {
-    int count = 0;
-    while (Cle[count] != NULL) {  
-        count++;
-    }
-    return count;
-}
-
->>>>>>> 7319a61680cff506bbc9f066dd6d028b68d68859
 int CreeFichier(int a){
 	ofstream fichier("Bib.bin", ios::out | ios::trunc);
 	for(int i=0;i<a;i++){

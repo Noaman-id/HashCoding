@@ -24,6 +24,15 @@ string CreeCle(int a,int b){
 	return Cle;
 }
 
+
+int longf(string Cle) {
+    int count = 0;
+    while (Cle[count] != NULL) {  
+        count++;
+    }
+    return count;
+}
+
 int CreeFichier(int a){
 	ofstream fichier("Cle.txt", ios::out | ios::trunc);
 	for(int i=0;i<a;i++){

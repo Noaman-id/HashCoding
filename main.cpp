@@ -8,7 +8,7 @@ using namespace std;
 #define m 100
 
 int Fonc_Hshcode(string Cle, int nb_function){
-	int L=longf(Cle);
+	int L=longfc(Cle);
 	int cp=0;
 	switch (nb_function)
 	{
@@ -52,7 +52,7 @@ string CreeCle(int a,int b){
 }
 
 
-int longf(string Cle) {
+int longfc(string Cle) {
     int count = 0;
     while (Cle[count] != NULL) {  
         count++;

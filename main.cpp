@@ -7,9 +7,6 @@ using namespace std;
 
 #define m 100
 
-<<<<<<< HEAD
-int Fonc_Hashcode(string Cle, int nb_function){
-=======
 int longfc(string Cle) {
     int count = 0;
     while (Cle[count] != NULL) {  
@@ -19,7 +16,7 @@ int longfc(string Cle) {
 }
 
 int Fonc_Hshcode(string Cle, int nb_function){
->>>>>>> fa0857555ffc5d23369b21790d1deff0ccec2379
+
 	int L=longfc(Cle);
 	int cp=0;
 	switch (nb_function)
@@ -83,6 +80,7 @@ void Creer_Thash(TThash& Thash, const std::string& Name, int NoFonction) {
         std::cerr << "Erreur : impossible d'ouvrir le fichier " << Name << std::endl;
         return;
     }
+
 
     std::string Cle;
     while (F >> Cle) 

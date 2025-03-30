@@ -2,7 +2,34 @@
 #include <string>
 #include <cstdlib>
 #include <fstream>
+#include <cmath>
 using namespace std;
+
+#define m 100
+
+int Fonc_Hshcode(string Cle, int nb_function){
+	int L=long(Cle);
+	int cp=0;
+	switch (nb_function)
+	{
+	case 1:
+		for(int i=0 ; i<L ;i++){
+			cp += (Cle[i] - '0') * 19 ? (Cle[i]>='0' && Cle[i]<='9') : (Cle[i] - '0') * 19;
+		}
+		return cp % m;
+		break;
+	case 2:
+		for(int i=0 ; i<L ;i++){
+			cp += (Cle[i] - '0') * 19 ? (Cle[i]>='0' && Cle[i]<='9') : (Cle[i] - '0') * 19;
+		}
+		return cp % m;
+		break;
+		break;
+	case 3:
+	// a trouver  //
+		break;
+	}
+}
 
 string CreeCle(int a,int b){
 	int NbrCh;

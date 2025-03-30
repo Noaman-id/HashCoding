@@ -7,7 +7,19 @@ using namespace std;
 
 #define m 100
 
+<<<<<<< HEAD
 int Fonc_Hashcode(string Cle, int nb_function){
+=======
+int longfc(string Cle) {
+    int count = 0;
+    while (Cle[count] != NULL) {  
+        count++;
+    }
+    return count;
+}
+
+int Fonc_Hshcode(string Cle, int nb_function){
+>>>>>>> fa0857555ffc5d23369b21790d1deff0ccec2379
 	int L=longfc(Cle);
 	int cp=0;
 	switch (nb_function)
@@ -20,10 +32,9 @@ int Fonc_Hashcode(string Cle, int nb_function){
 		break;
 	case 2:
 		for(int i=0 ; i<L ;i++){
-			cp += (Cle[i] - '0') * 19 ? (Cle[i]>='0' && Cle[i]<='9') : (Cle[i] - '0') * 19;
+			cp += (Cle[i] >= '0' && Cle[i] <= '9') ? pow((Cle[i] - '0'), 2) * 19 : pow((Cle[i] - '0') * 19, 2);
 		}
 		return cp % m;
-		break;
 		break;
 	case 3:
 	// a trouver  //
@@ -49,15 +60,6 @@ string CreeCle(int a,int b){
 		}
 	}
 	return Cle;
-}
-
-
-int longfc(string Cle) {
-    int count = 0;
-    while (Cle[count] != NULL) {  
-        count++;
-    }
-    return count;
 }
 
 int CreeFichier(int a){

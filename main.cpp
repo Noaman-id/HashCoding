@@ -30,12 +30,7 @@ int longfc(string Cle) {
     return count;
 }
 
-<<<<<<< HEAD
-int Fonc_Hshcode(string Cle, int nb_function){
-
-=======
 int Fonc_Hashcode(string Cle, int nb_function){
->>>>>>> c04093c13fa9954866e1b784ddda23a23d7b413f
 	int L=longfc(Cle);
 	int cp=0;
 	switch (nb_function)
@@ -111,23 +106,28 @@ int CreeFichier(int a){
 	}
 	return 1;
 }	
-void Ajouter_Thash(string Cle, int NoFonction) {
+
+void Ajouter_Thash(TTHash& THash, string Cle, int NoFonction) {
+
     int Indice = Fonc_Hashcode(Cle, NoFonction);
-    Ajouter_liste(THash[Indice].Lien, Cle);
-    THash[Indice].NbElem++;
+
+	Ajouter_liste(THash.Tableau[Indice].Suiv, Cle);
+
+	THash.Tableau[Indice].NbElem++;
 }
 
 
 
-void Creer_Thash(TThash& Thash, const std::string& Name, int NoFonction) {
-    std::ifstream F(Name);  
+void Creer_Thash(TTHash Thash, string Name, int NoFonction) 
+{
+    ifstream F(Name);  
     if (!F) {
-        std::cerr << "Erreur : impossible d'ouvrir le fichier " << Name << std::endl;
+        cerr << "Erreur : impossible d'ouvrir le fichier " << Name << std::endl;
         return;
     }
 
 
-    std::string Cle;
+    string Cle;
     while (F >> Cle) 
 	{  
         Ajouter_Thash(Thash, Cle, NoFonction);
@@ -135,6 +135,7 @@ void Creer_Thash(TThash& Thash, const std::string& Name, int NoFonction) {
 
     F.close();  
 }
+
 int main() {
 	CreeFichier(10000);
 	return 0;
